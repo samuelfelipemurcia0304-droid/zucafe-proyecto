@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zucafe - Café Artesanal de Origen</title>
+    <!-- Enlace a tu hoja de estilos -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO Y MENÚ DE NAVEGACIÓN -->
+    <header>
+        <div class="logo">
+            <h1>Zucafe</h1>
+            <p>Café artesanal cultivado con tradición</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#ubicanos">Ubícanos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- SECCIÓN DE BIENVENIDA -->
+        <section id="inicio" class="hero">
+            <h2>El verdadero aroma del campo en tu taza</h2>
+            <p>Seleccionamos, tostamos y empacamos nuestro café de forma artesanal para garantizarte frescura en cada grano.</p>
+            <a href="#productos" class="btn-principal">Ver Catálogo</a>
+        </section>
+
+        <!-- 1. SECCIÓN DE PRODUCTOS (CATÁLOGO) -->
+        <section id="productos">
+            <h2>Nuestros Productos</h2>
+            <p>Elige tu presentación favorita:</p>
+
+            <div class="catalogo-grid">
+                <!-- Producto 1 -->
+                <article class="producto-card">
+                    <img src="./assets/img/cafe-molido.jpg" alt="Café Molido Tradicional 500g">
+                    <h3>Café Molido Tradicional (500g)</h3>
+                    <p>Tostión media con notas dulces a panela y chocolate. Ideal para greca o cafetera tradicional.</p>
+                    <span class="precio">$25.000 COP</span>
+                    <button onclick="agregarPedido('Café Molido Tradicional 500g')">Pedir este café</button>
+                </article>
+
+                <!-- Producto 2 -->
+                <article class="producto-card">
+                    <img src="./assets/img/cafe-grano.jpg" alt="Café en Grano Selección 500g">
+                    <h3>Café en Grano Selección (500g)</h3>
+                    <p>Granos enteros seleccionados a mano para quienes disfrutan moler su café al instante.</p>
+                    <span class="precio">$28.000 COP</span>
+                    <button onclick="agregarPedido('Café en Grano Selección 500g')">Pedir este café</button>
+                </article>
+
+                <!-- Producto 3 -->
+                <article class="producto-card">
+                    <img src="./assets/img/cafe-especial.jpg" alt="Edición Especial Reserva 250g">
+                    <h3>Edición Especial Reserva (250g)</h3>
+                    <p>Cosecha limitada con aroma intenso y acidez balanceada.</p>
+                    <span class="precio">$18.000 COP</span>
+                    <button onclick="agregarPedido('Edición Especial Reserva 250g')">Pedir este café</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- 2. SECCIÓN UBÍCANOS -->
+        <section id="ubicanos">
+            <h2>Ubícanos</h2>
+            <p>Conoce de dónde viene nuestro café y nuestros puntos de distribución:</p>
+            
+            <div class="ubicacion-info">
+                <div class="datos-lugar">
+                    <h3>Finca Cafetera Zucafe</h3>
+                    <p><strong>Origen:</strong> Región Cafetera, Colombia</p>
+                    <p><strong>Horario de atención:</strong> Lunes a Sábado de 8:00 a.m. a 6:00 p.m.</p>
+                    <p><strong>Envíos:</strong> Realizamos entregas a domicilio en Bogotá, Soacha y envíos nacionales.</p>
+                </div>
+                
+                <!-- Espacio para mapa o foto de la finca -->
+                <div class="mapa-contenedor">
+                    <img src="./assets/img/finca-zucafe.jpg" alt="Cultivo de café Zucafe">
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SECCIÓN CONTACTO -->
+        <section id="contacto">
+            <h2>Contacto y Pedidos</h2>
+            <p>¿Quieres hacer un pedido al por mayor o tienes alguna duda? Escríbenos:</p>
+
+            <form id="formulario-contacto">
+                <div class="campo">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Camila Gómez" required>
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Teléfono / WhatsApp:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej. 300 123 4567" required>
+                </div>
+
+                <div class="campo">
+                    <label for="producto-interes">Producto de interés:</label>
+                    <select id="producto-interes" name="producto">
+                        <option value="molido">Café Molido Tradicional (500g)</option>
+                        <option value="grano">Café en Grano Selección (500g)</option>
+                        <option value="especial">Edición Especial Reserva (250g)</option>
+                        <option value="mayorista">Pedido al por mayor</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Mensaje o dirección de entrega:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos cuántos paquetes deseas..." required></textarea>
+                </div>
+
+                <button type="submit">Enviar Solicitud</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026 Zucafe - Café Artesanal Colombiano. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Enlace a tu archivo JavaScript -->
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
