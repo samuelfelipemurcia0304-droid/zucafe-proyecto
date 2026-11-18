@@ -1,5 +1,5 @@
-//* ==========================================
-   1. ESTILOS GENERALES Y RESET BÁSICO
+/* ==========================================
+1. ESTILOS GENERALES Y RESET BÁSICO
    ========================================== */
 * {
     margin: 0;
@@ -15,7 +15,7 @@ body {
 }
 
 /* ==========================================
-   2. ENCABEZADO Y NAVEGACIÓN
+2. ENCABEZADO Y NAVEGACIÓN
    ========================================== */
 header {
     background-color: #4a3525; /* Tono café elegante */
@@ -47,7 +47,7 @@ nav a:hover {
 }
 
 /* ==========================================
-   3. SECCIÓN PRINCIPAL (HERO)
+3. SECCIÓN PRINCIPAL (HERO)
    ========================================== */
 .hero {
     background-color: #d4a373;
@@ -80,7 +80,7 @@ nav a:hover {
 }
 
 /* ==========================================
-   4. SECCIONES Y CATÁLOGO DE PRODUCTOS
+4. SECCIONES Y CATÁLOGO DE PRODUCTOS
    ========================================== */
 section {
     padding: 40px 20px;
@@ -108,6 +108,7 @@ section > p {
     justify-content: center;
 }
 
+/* Tarjeta de producto unificada y optimizada */
 .producto-card {
     background-color: #ffffff;
     border: 1px solid #dddddd;
@@ -115,16 +116,18 @@ section > p {
     width: 300px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Clave para que la imagen respete las esquinas redondeadas */
 }
 
 .producto-card img {
     width: 100%;
-    height: 180px;
+    height: px;
     object-fit: cover;
+    display: block; /* Elimina espacios fantasma debajo de la imagen */
     border-radius: 5px;
     margin-bottom: 15px;
-    background-color: #e0e0e0; /* Color gris de respaldo si no carga la imagen */
+    background-color: #e0e0e0; /* Color gris de respaldo si tarda en cargar la imagen */
 }
 
 .producto-card h3 {
@@ -142,7 +145,7 @@ section > p {
 }
 
 /* ==========================================
-   5. SECCIÓN UBÍCANOS
+5. SECCIÓN UBÍCANOS
    ========================================== */
 .ubicacion-info {
     display: flex;
@@ -170,7 +173,7 @@ section > p {
 }
 
 /* ==========================================
-   6. FORMULARIO DE CONTACTO
+6. FORMULARIO DE CONTACTO
    ========================================== */
 form {
     background-color: #ffffff;
@@ -219,7 +222,7 @@ button:hover {
 }
 
 /* ==========================================
-   7. PIE DE PÁGINA (FOOTER)
+7. PIE DE PÁGINA (FOOTER)
    ========================================== */
 footer {
     background-color: #333333;
