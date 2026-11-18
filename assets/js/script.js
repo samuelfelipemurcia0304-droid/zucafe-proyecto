@@ -1,32 +1,47 @@
 // ==========================================
-// SCRIPT PRINCIPAL - ZUCAFÉ WEB
+// SCRIPT PRINCIPAL - ZUCAFÉ (WHATSAPP INTEGRATION)
 // ==========================================
 
 console.log("¡Zucafé JavaScript cargado correctamente!");
 
-// Función interactiva para los botones de pedido del catálogo
+// Función para botones directos del catálogo
 function agregarPedido(nombreProducto) {
-    alert("¡Has seleccionado: " + nombreProducto + "!\n\nPara completar tu pedido, por favor llena tus datos en la sección de contacto.");
+    const telefonoNegocio = "573223341617"; // Tu número real de WhatsApp
+    const mensaje = encodeURIComponent(`Hola Zucafé, quiero hacer un pedido de: *${nombreProducto}*`);
     
-    const seccionContacto = document.getElementById("contacto");
-    if (seccionContacto) {
-        seccionContacto.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Abre el chat de WhatsApp con el mensaje preescrito
+    window.open(`https://wa.me/${telefonoNegocio}?text=${mensaje}`, '_blank');
 }
 
-// Validación del formulario de contacto
+// Manejo del formulario de contacto para enviar a WhatsApp
 document.addEventListener("DOMContentLoaded", function() {
     const formulario = document.getElementById("formulario-contacto");
     
     if (formulario) {
         formulario.addEventListener("submit", function(evento) {
-            evento.preventDefault();
+            evento.preventDefault(); // Evita que la página se recargue
             
+            // Capturamos los datos del formulario
             const nombre = document.getElementById("nombre").value;
-            const productoInteres = document.getElementById("producto-interes").value;
+            const telefono = document.getElementById("telefono").value;
+            const producto = document.getElementById("producto-interes").value;
+            const mensajeUsuario = document.getElementById("mensaje").value;
             
-            alert("¡Muchas gracias, " + nombre + "! Hemos recibido tu solicitud sobre '" + productoInteres + "'. Nos pondremos en contacto contigo muy pronto.");
+            const telefonoNegocio = "573223341617"; // Tu número real de WhatsApp
             
+            // Armamos el texto ordenado para WhatsApp
+            const textoWhatsApp = encodeURIComponent(
+                `*¡Nuevo Pedido desde la Web!* ☕\n\n` +
+                `*Nombre:* ${nombre}\n` +
+                `*Teléfono:* ${telefono}\n` +
+                `*Producto:* ${producto}\n` +
+                `*Mensaje/Dirección:* ${mensajeUsuario}`
+            );
+            
+            // Abrimos WhatsApp con el pedido listo
+            window.open(`https://wa.me/${telefonoNegocio}?text=${textoWhatsApp}`, '_blank');
+            
+            // Limpiamos el formulario
             formulario.reset();
         });
     }
