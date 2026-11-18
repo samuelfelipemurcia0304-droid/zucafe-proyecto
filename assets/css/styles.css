@@ -15,7 +15,7 @@ body {
 }
 
 /* ==========================================
-2. ENCABEZADO Y NAVEGACIÓN
+2. ENCABEZADO, NAVEGACIÓN Y LOGO
    ========================================== */
 header {
     background-color: #4a3525; /* Tono café elegante */
@@ -24,10 +24,34 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-header h1 {
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.logo-texto h1 {
     font-size: 24px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.logo-texto p {
+    font-size: 13px;
+    margin: 0;
+    color: #d4a373;
 }
 
 nav ul {
@@ -108,7 +132,6 @@ section > p {
     justify-content: center;
 }
 
-/* Tarjeta de producto unificada y optimizada */
 .producto-card {
     background-color: #ffffff;
     border: 1px solid #dddddd;
@@ -117,17 +140,17 @@ section > p {
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Clave para que la imagen respete las esquinas redondeadas */
+    overflow: hidden;
 }
 
 .producto-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    display: block; /* Elimina espacios fantasma debajo de la imagen */
+    display: block;
     border-radius: 5px;
     margin-bottom: 15px;
-    background-color: #e0e0e0; /* Color gris de respaldo si tarda en cargar la imagen */
+    background-color: #e0e0e0;
 }
 
 .producto-card h3 {
