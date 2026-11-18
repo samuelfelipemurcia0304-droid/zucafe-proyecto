@@ -145,12 +145,15 @@ section > p {
 
 .producto-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 220px;
+    /* CAMBIO PRINCIPAL: Usamos 'contain' para que la imagen se vea completa */
+    object-fit: contain; 
     display: block;
     border-radius: 5px;
     margin-bottom: 15px;
-    background-color: #e0e0e0;
+    /* Fondo oscuro opcional para que resalten las etiquetas negras de tu café */
+    background-color: #1a1a1a; 
+    padding: 5px;
 }
 
 .producto-card h3 {
