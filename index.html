@@ -1,144 +1,201 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zucafe - Café Artesanal de Origen</title>
-    <!-- Enlace a tu hoja de estilos -->
-    <link rel="stylesheet" href="./assets/css/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Zucafé — Un sabor para no olvidar. Venta de Café Tradicional y Café Especialidad cultivado bajo sombra en Tena, Cundinamarca (1.750 m.s.n.m.), variedad Caturra. Envíos con valor adicional."
+    />
+    <title>Zucafé | Un sabor para no olvidar — Café de Tena, Cundinamarca</title>
 
-    <!-- ENCABEZADO Y MENÚ DE NAVEGACIÓN CON LOGO -->
-    <header>
-<div class="logo-container">
-        <img src="./assets/img/zucafelogo.png" alt="Logo Zucafe" class="logo-img">
-        <div class="logo-texto">
-            <h1>Zucafe</h1>
-            <p>Café artesanal cultivado con tradición</p>
+    <!-- Tipografías expresivas (Fraunces para títulos artesanales + Plus Jakarta Sans para lectura) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Contenedor principal para app en React/Vite -->
+    <div id="root"></div>
+
+    <!-- Estructura base de referencia 100% venta de café Zucafé -->
+    <header id="inicio" class="zucafe-header">
+      <nav aria-label="Navegación principal">
+        <a href="#inicio" class="marca">Zucafé</a>
+        <ul>
+          <li><a href="#origen">Origen</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#pedido">Pedir Café</a></li>
+          <li><a href="#asistente-ia">Asistente IA</a></li>
+          <li><a href="#admin">Admin</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero">
+        <p class="lema">Un sabor para no olvidar</p>
+        <h1>Café de altura cultivado bajo sombra en Tena, Cundinamarca</h1>
+        <p class="resumen">
+          Variedad Caturra a 1.750 m.s.n.m. con aroma floral intenso y sabor frutal cítrico,
+          dulce y brillante. Venta directa de Café Tradicional y Café Especialidad (se adiciona el
+          valor del envío).
+        </p>
+        <div class="acciones-hero">
+          <a href="#catalogo" class="btn-principal">Ver precios y cafés</a>
+          <a
+            href="https://wa.me/573223341617?text=Hola%20Zucaf%C3%A9%2C%20quiero%20hacer%20un%20pedido%20de%20caf%C3%A9%20(entiendo%20que%20se%20adiciona%20el%20valor%20del%20env%C3%ADo)."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-whatsapp"
+          >
+            Pedir por WhatsApp (3223341617)
+          </a>
         </div>
-    </div>
-    <!-- Aquí es donde suele ir tu etiqueta <nav> con el menú de navegación -->
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#ubicanos">Ubícanos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+      </div>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
     <main>
+      <!-- Origen y perfil sensorial -->
+      <section id="origen" class="seccion-origen">
+        <h2>Origen y Perfil Sensorial</h2>
+        <ul>
+          <li><strong>Origen y altitud:</strong> Tena, Cundinamarca, Colombia (1.750 m.s.n.m.)</li>
+          <li><strong>Variedad y cultivo:</strong> Caturra; agroforestal bajo sombra</li>
+          <li><strong>Perfil:</strong> Aroma floral intenso; sabor frutal cítrico, dulce y brillante</li>
+          <li>
+            <strong>Presentaciones:</strong> 500 g / 1 libra (tostión media / media alta; molido
+            fino / medio o grano en bolsa kraft con ventana y bolsa negra de 500 g con QR de
+            WhatsApp)
+          </li>
+          <li><strong>Envíos:</strong> A todos los pedidos se adiciona el valor del envío</li>
+        </ul>
+      </section>
 
-        <!-- SECCIÓN DE BIENVENIDA -->
-        <section id="inicio" class="hero">
-            <h2>El verdadero aroma del campo en tu taza</h2>
-            <p>Seleccionamos, tostamos y empacamos nuestro café de forma artesanal para garantizarte frescura en cada grano.</p>
-            <a href="#productos" class="btn-principal">Ver Catálogo</a>
-        </section>
+      <!-- Catálogo con precios exactos -->
+      <section id="catalogo" class="seccion-catalogo">
+        <h2>Catálogo de Café Zucafé</h2>
+        <p class="aviso-envio">
+          Nota: A todos los precios indicados se adiciona el valor del envío.
+        </p>
 
-        <!-- 1. SECCIÓN DE PRODUCTOS (CATÁLOGO) -->
-        <section id="productos">
-            <h2>Nuestros Productos</h2>
-            <p>Elige tu presentación favorita:</p>
+        <div class="grid-cafes">
+          <article class="tarjeta-cafe">
+            <h3>Café Tradicional — 1/2 libra ☕</h3>
+            <p class="precio">$19.000 <span>+ envío</span></p>
+            <p>
+              Tena, Cundinamarca (1.750 m.s.n.m.), variedad Caturra bajo sombra. Aroma floral
+              intenso y sabor frutal cítrico, dulce y brillante.
+            </p>
+          </article>
 
-            <div class="catalogo-grid">
-                <!-- Producto 1 -->
-                <article class="producto-card">
-                    <img src="./assets/img/imagen1.png" alt="Café Molido Tradicional 500g">
-                    <h3>Café Molido Tradicional (500g)</h3>
-                    <p>Tostión media con notas dulces a panela y chocolate. Ideal para greca o cafetera tradicional.</p>
-                    <span class="precio">$25.000 COP</span>
-                    <button onclick="agregarPedido('Café Molido Tradicional 500g')">Pedir este café</button>
-                </article>
+          <article class="tarjeta-cafe">
+            <h3>Café Tradicional — 1 libra ☕</h3>
+            <p class="precio">$34.000 <span>+ envío</span></p>
+            <p>
+              Presentación de 1 libra de Café Tradicional Zucafé ("Un sabor para no olvidar") con
+              taza brillante, dulce y cítrica.
+            </p>
+          </article>
 
-                <!-- Producto 2 -->
-                <article class="producto-card">
-                    <img src="./assets/img/imagen2.png" alt="Café en Grano Selección 500g">
-                    <h3>Café en Grano Selección (500g)</h3>
-                    <p>Granos enteros seleccionados a mano para quienes disfrutan moler su café al instante.</p>
-                    <span class="precio">$28.000 COP</span>
-                    <button onclick="agregarPedido('Café en Grano Selección 500g')">Pedir este café</button>
-                </article>
+          <article class="tarjeta-cafe">
+            <h3>Café Especialidad — 1/2 libra</h3>
+            <p class="precio">$22.000 <span>+ envío</span></p>
+            <p>
+              Selección especial de altura con aroma floral marcado, notas cítricas y dulzor
+              equilibrado.
+            </p>
+          </article>
 
-                <!-- Producto 3 -->
-                <article class="producto-card">
-                    <img src="./assets/img/imagen3.jpeg" alt="Edición Especial Reserva 250g">
-                    <h3>Edición Especial Reserva (250g)</h3>
-                    <p>Cosecha limitada con aroma intenso y acidez balanceada.</p>
-                    <span class="precio">$18.000 COP</span>
-                    <button onclick="agregarPedido('Edición Especial Reserva 250g')">Pedir este café</button>
-                </article>
-            </div>
-        </section>
+          <article class="tarjeta-cafe">
+            <h3>Café Especialidad — 1 libra</h3>
+            <p class="precio">$38.000 <span>+ envío</span></p>
+            <p>
+              Mayor rendimiento en 1 libra para disfrutar en casa u oficina con perfil floral,
+              cítrico y dulce.
+            </p>
+          </article>
+        </div>
+      </section>
 
-        <!-- 2. SECCIÓN UBÍCANOS -->
-        <section id="ubicanos">
-            <h2>Ubícanos</h2>
-            <p>Conoce de dónde viene nuestro café y nuestros puntos de distribución:</p>
-            
-            <div class="ubicacion-info">
-                <div class="datos-lugar">
-                    <h3>Finca Cafetera Zucafe</h3>
-                    <p><strong>Origen:</strong> Región Cafetera, Colombia</p>
-                    <p><strong>Horario de atención:</strong> Lunes a Sábado de 8:00 a.m. a 6:00 p.m.</p>
-                    <p><strong>Envíos:</strong> Realizamos entregas a domicilio en Bogotá, Soacha y envíos nacionales.</p>
-                </div>
-                
-                <!-- Espacio para mapa o foto de la finca -->
-                <div class="mapa-contenedor">
-                    <img src="./assets/img/finca-zucafe.jpg" alt="Cultivo de café Zucafe">
-                </div>
-            </div>
-        </section>
+      <!-- Formulario de pedido / contacto -->
+      <section id="pedido" class="seccion-pedido">
+        <h2>Haz tu Pedido de Café</h2>
+        <p>
+          Completa los datos o comunícate directo por WhatsApp al <strong>3223341617</strong>. Se
+          adiciona el valor del envío.
+        </p>
 
-        <!-- 3. SECCIÓN CONTACTO -->
-        <section id="contacto">
-            <h2>Contacto y Pedidos</h2>
-            <p>¿Quieres hacer un pedido al por mayor o tienes alguna duda? Escríbenos:</p>
+        <form id="form-pedido-zucafe">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" required placeholder="Tu nombre completo" />
 
-            <form id="formulario-contacto">
-                <div class="campo">
-                    <label for="nombre">Nombre completo:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Camila Gómez" required>
-                </div>
+          <label for="whatsapp">WhatsApp</label>
+          <input id="whatsapp" name="whatsapp" type="tel" required placeholder="Ej. 3223341617" />
 
-                <div class="campo">
-                    <label for="telefono">Teléfono / WhatsApp:</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="Ej. 300 123 4567" required>
-                </div>
+          <label for="producto">Tipo de café</label>
+          <select id="producto" name="producto" required>
+            <option value="tradicional">Café Tradicional</option>
+            <option value="especialidad">Café Especialidad</option>
+          </select>
 
-                <div class="campo">
-                    <label for="producto-interes">Producto de interés:</label>
-                    <select id="producto-interes" name="producto">
-                        <option value="molido">Café Molido Tradicional (500g)</option>
-                        <option value="grano">Café en Grano Selección (500g)</option>
-                        <option value="especial">Edición Especial Reserva (250g)</option>
-                        <option value="mayorista">Pedido al por mayor</option>
-                    </select>
-                </div>
+          <label for="presentacion">Presentación</label>
+          <select id="presentacion" name="presentacion" required>
+            <option value="1/2 libra">1/2 libra</option>
+            <option value="1 libra">1 libra</option>
+          </select>
 
-                <div class="campo">
-                    <label for="mensaje">Mensaje o dirección de entrega:</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos cuántos paquetes deseas..." required></textarea>
-                </div>
+          <label for="cantidad">Cantidad</label>
+          <input id="cantidad" name="cantidad" type="number" min="1" value="1" required />
 
-                <button type="submit">Enviar Solicitud</button>
-            </form>
-        </section>
+          <label for="lugar-entrega">Lugar de entrega (opcional)</label>
+          <input
+            id="lugar-entrega"
+            name="lugarEntrega"
+            type="text"
+            placeholder="Opcional — o coordina por WhatsApp (se adiciona el envío)"
+          />
 
+          <button type="submit">Registrar pedido</button>
+          <a
+            href="https://wa.me/573223341617"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-wpp-directo"
+          >
+            Comunicarme con WhatsApp (3223341617)
+          </a>
+        </form>
+      </section>
+
+      <!-- Chatbot IA -->
+      <section id="asistente-ia" class="seccion-ia">
+        <h2>Asistente Virtual Zucafé (IA)</h2>
+        <p>
+          Resuelve dudas sobre precios ($19.000, $34.000, $22.000 y $38.000 + envío adicional),
+          presentaciones (1/2 libra y 1 libra), origen en Tena, Cundinamarca y pedidos.
+        </p>
+        <div id="chat-zucafe" aria-live="polite"></div>
+      </section>
+
+      <!-- Panel Admin -->
+      <section id="admin" class="seccion-admin">
+        <h2>Panel Admin — Gestión de Café y Pedidos</h2>
+        <p>Acceso para iniciar sesión, ver pedidos recibidos y agregar, editar precio o eliminar cafés.</p>
+        <div id="panel-admin-zucafe"></div>
+      </section>
     </main>
 
-    <!-- PIE DE PÁGINA -->
-    <footer>
-        <p>&copy; 2026 Zucafe - Café Artesanal Colombiano. Todos los derechos reservados.</p>
+    <footer class="zucafe-footer">
+      <p>
+        <strong>Zucafé — "Un sabor para no olvidar"</strong> | Tena, Cundinamarca (1.750 m.s.n.m.) |
+        WhatsApp: <a href="https://wa.me/573223341617">3223341617</a>
+      </p>
+      <p>Recuerda: a todos los precios se adiciona el valor del envío.</p>
     </footer>
 
-    <!-- Enlace a tu archivo JavaScript -->
-    <script src="./assets/js/script.js"></script>
-</body>
+    <!-- Si usas Vite + React, este script carga tu app desde src/main.jsx -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

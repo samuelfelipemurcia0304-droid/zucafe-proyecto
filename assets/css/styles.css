@@ -1,258 +1,448 @@
-/* ==========================================
-1. ESTILOS GENERALES Y RESET BÁSICO
-   ========================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+/* ==========================================================================
+   ZUCAFÉ — "Un sabor para no olvidar"
+   Estilos base, paleta cálida artesanal y diseño adaptable (mobile-first)
+   ========================================================================== */
+
+:root {
+  /* Paleta cromática Zucafé */
+  --bg-crema: #fbf6ee;
+  --bg-kraft: #f2e6d5;
+  --bg-oscuro: #181412;
+  --bg-oscuro-elevado: #241d19;
+
+  --cafe-tostado: #3b2114;
+  --cafe-oscuro: #26140c;
+  --verde-bosque: #24422e;
+  --verde-hover: #1b3323;
+  --dorado-citrico: #d9822b;
+  --dorado-suave: #f3b562;
+
+  --texto-principal: #231712;
+  --texto-secundario: #5e483d;
+  --texto-claro: #fdf9f3;
+  --texto-claro-muted: #d6c8ba;
+
+  --borde-suave: rgba(59, 33, 20, 0.14);
+  --borde-fuerte: rgba(59, 33, 20, 0.28);
+
+  /* Tipografías */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Radios, sombras y transiciones */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  --sombra-suave: 0 10px 28px rgba(38, 20, 12, 0.08);
+  --sombra-card: 0 16px 36px rgba(38, 20, 12, 0.11);
+  --sombra-fuerte: 0 22px 48px rgba(24, 20, 18, 0.22);
+
+  --transicion: 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  --max-ancho: 1180px;
+}
+
+/* Reset y base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-    background-color: #f9f9f9;
-    color: #333333;
-    line-height: 1.6;
+  font-family: var(--font-sans);
+  background-color: var(--bg-crema);
+  color: var(--texto-principal);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* ==========================================
-2. ENCABEZADO, NAVEGACIÓN Y LOGO
-   ========================================== */
-header {
-    background-color: #4a3525; /* Tono café elegante */
-    color: #ffffff;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.logo-img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-    background-color: #ffffff;
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
 }
 
-.logo-texto h1 {
-    font-size: 24px;
-    margin: 0;
-    line-height: 1.1;
+:focus-visible {
+  outline: 3px solid var(--dorado-citrico);
+  outline-offset: 3px;
 }
 
-.logo-texto p {
-    font-size: 13px;
-    margin: 0;
-    color: #d4a373;
+/* Contenedor central */
+.contenedor {
+  width: min(100% - 2rem, var(--max-ancho));
+  margin-inline: auto;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+/* Tipografía de encabezados */
+h1,
+h2,
+h3,
+.marca {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
+/* ==========================================================================
+   ENCABEZADO Y NAVEGACIÓN
+   ========================================================================== */
+.zucafe-header {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(217, 130, 43, 0.22), transparent 45%),
+    radial-gradient(circle at 12% 85%, rgba(36, 66, 46, 0.35), transparent 50%),
+    linear-gradient(160deg, var(--cafe-oscuro) 0%, var(--cafe-tostado) 58%, var(--bg-oscuro) 100%);
+  color: var(--texto-claro);
+  padding-bottom: clamp(3.5rem, 7vw, 6rem);
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+  box-shadow: var(--sombra-fuerte);
 }
 
-nav a:hover {
-    color: #d4a373;
+.zucafe-header nav {
+  width: min(100% - 2rem, var(--max-ancho));
+  margin-inline: auto;
+  padding: 1.25rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(253, 249, 243, 0.12);
 }
 
-/* ==========================================
-3. SECCIÓN PRINCIPAL (HERO)
-   ========================================== */
+.marca {
+  font-size: clamp(1.5rem, 2.5vw, 1.95rem);
+  color: var(--dorado-suave);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.zucafe-header nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.65rem, 2vw, 1.6rem);
+  flex-wrap: wrap;
+}
+
+.zucafe-header nav a:not(.marca) {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--texto-claro-muted);
+  padding: 0.45rem 0.7rem;
+  border-radius: var(--radius-pill);
+  transition: color var(--transicion), background-color var(--transicion);
+}
+
+.zucafe-header nav a:not(.marca):hover {
+  color: var(--texto-claro);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Hero principal */
 .hero {
-    background-color: #d4a373;
-    color: #ffffff;
-    text-align: center;
-    padding: 60px 20px;
+  width: min(100% - 2rem, var(--max-ancho));
+  margin-inline: auto;
+  padding-top: clamp(2.5rem, 6vw, 4.5rem);
+  max-width: 820px;
 }
 
-.hero h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
+.lema {
+  display: inline-block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--dorado-suave);
+  background-color: rgba(217, 130, 43, 0.16);
+  border: 1px solid rgba(243, 181, 98, 0.35);
+  padding: 0.38rem 0.9rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.15rem;
 }
 
-.hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
+.hero h1 {
+  font-size: clamp(2.1rem, 5vw, 3.55rem);
+  color: var(--texto-claro);
+  margin-bottom: 1.15rem;
 }
 
-.btn-principal {
-    background-color: #4a3525;
-    color: #ffffff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+.resumen {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: var(--texto-claro-muted);
+  max-width: 66ch;
+  margin-bottom: 2rem;
 }
 
-.btn-principal:hover {
-    background-color: #2c1f15;
+.acciones-hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: center;
 }
 
-/* ==========================================
-4. SECCIONES Y CATÁLOGO DE PRODUCTOS
-   ========================================== */
-section {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+/* ==========================================================================
+   BOTONES
+   ========================================================================== */
+.btn-principal,
+.btn-whatsapp,
+button[type="submit"],
+.btn-accion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.96rem;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transicion), box-shadow var(--transicion), background-color var(--transicion);
 }
 
-section h2 {
-    text-align: center;
-    color: #4a3525;
-    margin-bottom: 10px;
-    font-size: 28px;
+.btn-principal,
+button[type="submit"] {
+  background: linear-gradient(135deg, var(--dorado-citrico), #c26a19);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(217, 130, 43, 0.32);
 }
 
-section > p {
-    text-align: center;
-    color: #666666;
-    margin-bottom: 30px;
+.btn-principal:hover,
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(217, 130, 43, 0.42);
 }
 
-.catalogo-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+.btn-whatsapp,
+.link-wpp-directo {
+  background-color: var(--verde-bosque);
+  color: var(--texto-claro);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 8px 20px rgba(20, 42, 28, 0.28);
 }
 
-.producto-card {
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 8px;
-    width: 300px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+.btn-whatsapp:hover,
+.link-wpp-directo:hover {
+  background-color: var(--verde-hover);
+  transform: translateY(-2px);
 }
 
-.producto-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: contain; /* Muestra la imagen completa sin recortar bordes */
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    background-color: #1a1a1a; /* Fondo elegante para los empaques */
-    padding: 5px;
+/* ==========================================================================
+   SECCIONES GENERALES
+   ========================================================================== */
+main section {
+  width: min(100% - 2rem, var(--max-ancho));
+  margin-inline: auto;
+  margin-top: clamp(3rem, 6vw, 4.75rem);
 }
 
-.producto-card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #4a3525;
+main section h2 {
+  font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+  color: var(--cafe-tostado);
+  margin-bottom: 0.75rem;
 }
 
-.producto-card .precio {
-    display: block;
-    font-size: 18px;
-    font-weight: bold;
-    color: #b08968;
-    margin: 15px 0;
+/* ==========================================================================
+   SECCIÓN ORIGEN Y PERFIL SENSORIAL
+   ========================================================================== */
+.seccion-origen {
+  background-color: var(--bg-kraft);
+  border: 1px solid var(--borde-fuerte);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  box-shadow: var(--sombra-suave);
 }
 
-/* ==========================================
-5. SECCIÓN UBÍCANOS
-   ========================================== */
-.ubicacion-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #dddddd;
+.seccion-origen ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
 }
 
-.datos-lugar, .mapa-contenedor {
-    flex: 1;
-    min-width: 280px;
+.seccion-origen li {
+  background-color: var(--bg-crema);
+  border: 1px solid var(--borde-suave);
+  border-left: 4px solid var(--verde-bosque);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.15rem;
+  font-size: 0.96rem;
+  color: var(--texto-principal);
 }
 
-.mapa-contenedor img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-    background-color: #e0e0e0;
+.seccion-origen li strong {
+  color: var(--cafe-tostado);
 }
 
-/* ==========================================
-6. FORMULARIO DE CONTACTO
-   ========================================== */
-form {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    border: 1px solid #dddddd;
-    max-width: 600px;
-    margin: 0 auto;
+/* ==========================================================================
+   CATÁLOGO DE CAFÉ Y PRECIOS
+   ========================================================================== */
+.aviso-envio {
+  display: inline-block;
+  background-color: rgba(217, 130, 43, 0.14);
+  color: var(--cafe-tostado);
+  border: 1px solid rgba(217, 130, 43, 0.4);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.6rem;
 }
 
-.campo {
-    margin-bottom: 15px;
+.grid-cafes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.35rem;
 }
 
-.campo label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #4a3525;
+.tarjeta-cafe {
+  background-color: #fff;
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--sombra-suave);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.85rem;
+  transition: transform var(--transicion), box-shadow var(--transicion), border-color var(--transicion);
 }
 
-.campo input,
-.campo select,
-.campo textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    font-size: 16px;
+.tarjeta-cafe:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-card);
+  border-color: var(--dorado-citrico);
 }
 
-button {
-    background-color: #4a3525;
-    color: #ffffff;
-    border: none;
-    padding: 12px 20px;
-    width: 100%;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: bold;
+.tarjeta-cafe h3 {
+  font-size: 1.22rem;
+  color: var(--cafe-tostado);
 }
 
-button:hover {
-    background-color: #2c1f15;
+.tarjeta-cafe .precio {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--verde-bosque);
 }
 
-/* ==========================================
-7. PIE DE PÁGINA (FOOTER)
-   ========================================== */
-footer {
-    background-color: #333333;
-    color: #ffffff;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-    font-size: 14px;
+.tarjeta-cafe .precio span {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--texto-secundario);
 }
+
+.tarjeta-cafe p:last-child {
+  font-size: 0.94rem;
+  color: var(--texto-secundario);
+}
+
+/* ==========================================================================
+   FORMULARIO DE PEDIDO
+   ========================================================================== */
+.seccion-pedido {
+  background-color: #fff;
+  border: 1px solid var(--borde-fuerte);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  box-shadow: var(--sombra-card);
+}
+
+.seccion-pedido > p {
+  color: var(--texto-secundario);
+  margin-bottom: 1.5rem;
+  max-width: 65ch;
+}
+
+#form-pedido-zucafe {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem 1.25rem;
+  align-items: start;
+}
+
+#form-pedido-zucafe label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--cafe-tostado);
+  margin-bottom: 0.35rem;
+}
+
+#form-pedido-zucafe input,
+#form-pedido-zucafe select {
+  width: 100%;
+  padding: 0.78rem 0.95rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--borde-fuerte);
+  background-color: var(--bg-crema);
+  color: var(--texto-principal);
+  font-size: 0.96rem;
+  transition: border-color var(--transicion), background-color var(--transicion);
+}
+
+#form-pedido-zucafe input:focus,
+#form-pedido-zucafe select:focus {
+  background-color: #fff;
+  border-color: var(--cafe-tostado);
+  outline: none;
+}
+
+#form-pedido-zucafe button[type="submit"],
+.link-wpp-directo {
+  margin-top: 0.75rem;
+}
+
+.link-wpp-directo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.94rem;
+}
+
+/* ==========================================================================
+   CHATBOT IA Y PANEL ADMIN
+   ========================================================================== */
+.seccion-ia,
+.seccion-admin {
+  background-color: var(--bg-kraft);
+  border: 1px solid var(--borde-fuerte);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: var(--sombra-suave);
+}
+
+.seccion-ia > p,
+.seccion-admin > p {
+  color: var(--texto-secundario);
+  margin-bottom: 1
