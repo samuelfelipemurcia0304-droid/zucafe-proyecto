@@ -8,7 +8,6 @@
   --bg-crema: #fbf6ee;
   --bg-kraft: #f2e6d5;
   --bg-oscuro: #181412;
-  --bg-oscuro-elevado: #241d19;
 
   --cafe-tostado: #3b2114;
   --cafe-oscuro: #26140c;
@@ -43,7 +42,6 @@
   --max-ancho: 1180px;
 }
 
-/* Reset y base */
 *,
 *::before,
 *::after {
@@ -89,13 +87,6 @@ textarea {
   outline-offset: 3px;
 }
 
-/* Contenedor central */
-.contenedor {
-  width: min(100% - 2rem, var(--max-ancho));
-  margin-inline: auto;
-}
-
-/* Tipografía de encabezados */
 h1,
 h2,
 h3,
@@ -136,9 +127,6 @@ h3,
 .marca {
   font-size: clamp(1.5rem, 2.5vw, 1.95rem);
   color: var(--dorado-suave);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
 }
 
 .zucafe-header nav ul {
@@ -163,7 +151,6 @@ h3,
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Hero principal */
 .hero {
   width: min(100% - 2rem, var(--max-ancho));
   margin-inline: auto;
@@ -211,7 +198,7 @@ h3,
 .btn-principal,
 .btn-whatsapp,
 button[type="submit"],
-.btn-accion {
+.link-wpp-directo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -268,7 +255,7 @@ main section h2 {
 }
 
 /* ==========================================================================
-   SECCIÓN ORIGEN Y PERFIL SENSORIAL
+   ORIGEN Y PERFIL SENSORIAL
    ========================================================================== */
 .seccion-origen {
   background-color: var(--bg-kraft);
@@ -301,7 +288,7 @@ main section h2 {
 }
 
 /* ==========================================================================
-   CATÁLOGO DE CAFÉ Y PRECIOS
+   CATÁLOGO DE CAFÉ
    ========================================================================== */
 .aviso-envio {
   display: inline-block;
@@ -417,17 +404,7 @@ main section h2 {
 
 #form-pedido-zucafe button[type="submit"],
 .link-wpp-directo {
-  margin-top: 0.75rem;
-}
-
-.link-wpp-directo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.85rem 1.5rem;
-  border-radius: var(--radius-pill);
-  font-weight: 700;
-  font-size: 0.94rem;
+  margin-top: 0.5rem;
 }
 
 /* ==========================================================================
@@ -445,4 +422,59 @@ main section h2 {
 .seccion-ia > p,
 .seccion-admin > p {
   color: var(--texto-secundario);
-  margin-bottom: 1
+  margin-bottom: 1.25rem;
+}
+
+#chat-zucafe,
+#panel-admin-zucafe {
+  background-color: var(--bg-crema);
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  min-height: 140px;
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA
+   ========================================================================== */
+.zucafe-footer {
+  margin-top: clamp(3.5rem, 7vw, 5.5rem);
+  background-color: var(--bg-oscuro);
+  color: var(--texto-claro-muted);
+  text-align: center;
+  padding: 2.25rem 1.25rem;
+  font-size: 0.92rem;
+}
+
+.zucafe-footer strong {
+  color: var(--dorado-suave);
+}
+
+.zucafe-footer a {
+  color: var(--dorado-suave);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.zucafe-footer p + p {
+  margin-top: 0.45rem;
+  font-size: 0.86rem;
+  color: rgba(214, 200, 186, 0.82);
+}
+
+/* ==========================================================================
+   RESPONSIVE MÓVIL
+   ========================================================================== */
+@media (max-width: 600px) {
+  .zucafe-header nav {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .acciones-hero,
+  .acciones-hero a,
+  #form-pedido-zucafe button[type="submit"],
+  .link-wpp-directo {
+    width: 100%;
+  }
+}
